@@ -1,0 +1,35 @@
+<div class="cTitle">
+    <h1>权限管理</h1>
+    <p>当前位置：<span class="text-danger">社网员权限管理</span></p>
+</div>
+<div class="cWrapper notice_new">
+    <form method="POST" class="form-horizontal" name="permissionForm" >
+        <button type="button" class="btn btn-primary" style="margin-bottom:15px;" ng-click="add()">添加管辖区域</button>
+        <table class="table table-bordered">
+            <tr>
+                <th width="15%">类型</th>
+                <th width="75%">地址</th>
+                <th width="10%">操作</th>
+            </tr>
+            <tr ng-repeat="sq in list">
+                <td>
+                    <select class="form-control" ng-model="sq.lb" ng-options="a.id as a.name for a in lb" required>
+                        <option value="" hidden>-- 请选择 --</option>
+                    </select>
+                </td>
+                <td><input type="text" class="form-control" ng-model="sq.dz" required></td>
+                <td>
+                    <button class="btn btn-danger" ng-click="del($index)">移除</button>
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="btn-group" role="group">
+            <button type="button" ng-disabled="permissionForm.$invalid" class="btn btn-primary" ng-click="cs()">保存</button>
+            <button type="button" class="btn btn-danger">删除社网员</button>
+        </div>
+
+    </form>
+
+</div>

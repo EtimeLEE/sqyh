@@ -1,0 +1,127 @@
+<div class="cTitle">
+    <h1>社区管理</h1>
+    <p>当前位置：<span class="text-danger" ng-bind="text"></span></p>
+</div>
+<div class="cWrapper sqgl-detail clearfix">
+    <div class="detail floatl">
+        <form method="POST" class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2">社区名称</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">街道</label>
+                    <div class="col-sm-10">
+                    <select class="form-control">
+                        <option>XX街道</option>
+                        <option>XX街道</option>
+                        <option>XX街道</option>
+                        <option>XX街道</option>
+                        <option>XX街道</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">绑定社区</label>
+                <div class="col-sm-10">
+                    <select class="form-control">
+                        <option>1XX社区</option>
+                        <option>2XX社区</option>
+                        <option>3XX社区</option>
+                        <option>4XX社区</option>
+                        <option>5XX社区</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">地址</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="4" disabled>辽宁省大连市中山区中山广场中山广场中山广场中山广场中山广场</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">电话</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">邮箱</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" disabled value="123456789@qq.com">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">负责人</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" disabled value="负责人XXX">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">负责人手机</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">社区简介</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="10" disabled>习近平指出，现在，安徽发展已经站在新的历史起点上。安徽推动绿色发展、低碳发展有基础，推动深化改革、内陆开放有闯劲，实施创新驱动、产业升级有优势，只要以钉钉子精神干，再接再厉、不骄不躁、奋力拼搏，在中部崛起中前景可期。希望安徽进一步解放思想、真抓实干、开拓创新，在中部崛起中闯出新路、创造美好前景。
+　　芳菲四月，千里江淮草长莺飞，一派生机蓬勃景象。
+　　4月24日至27日，中共中央总书记、国家主席、中央军委主席习近平亲临安徽考察工作。这是对安徽发展的高度重视，是对安徽人民的亲切关怀！从大江南北到淮河两岸，7000万江淮儿女欢欣鼓舞、无比振奋！</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-show="editBtn" type="submit" class="btn btn-primary">修改</button>
+                    <button ng-show="editBtn" type="submit" class="btn btn-danger">停用社区账号</button>
+                    <button ng-show="reviewBtn" type="submit" class="btn btn-primary">审核通过</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="slider floatl">
+        <!-- <div class="slide-wraper">
+            <ul class="img">
+                <li class="slide-item"><img src="../libs/images/c0.jpg" alt=""></li>
+                <li class="slide-item"><img src="../libs/images/c1.jpg" alt=""></li>
+                <li class="slide-item"><img src="../libs/images/c2.jpg" alt=""></li>
+                <li class="slide-item"><img src="../libs/images/c3.jpg" alt=""></li>
+            </ul>
+            <ul class="num"></ul>
+            <div class="slide-btn left">&lt;</div>
+            <div class="slide-btn right">&gt;</div>
+        </div> -->
+
+
+        <div id="carousel-example-generic" class="carousel slide" ng-show="imgSize > 0"> 
+            <div class="carousel-inner" >
+                <img class="item animateMe lunbo-beautiful animated  pulse" ng-class="{active:x.id === lunbo.currentId}" ng-repeat="x in lunboImg" ng-src="{{x.img}}"/>
+            </div>
+            <a class="left carousel-control" href="javascript:void(0)" ng-click="previousImg()">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="javascript:void(0)" ng-click="nextImg()">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+<style>
+.slide{ width: 500px; height: 350px; }
+.lunbo-beautiful{
+  width: 500px;
+  height: 350px;
+}
+.carousel-inner {
+  background-color: #888;
+}
+
+</style>

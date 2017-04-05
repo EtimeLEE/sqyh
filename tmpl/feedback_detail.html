@@ -1,0 +1,173 @@
+<div class="cTitle">
+    <h1>民生在线</h1>
+    <p>当前位置：<span class="text-danger">民生在线详情</span></p>
+</div>
+<div class="cWrapper data-detail">
+    <form action="">
+        <table class="table table-hover table-bordered table-striped">
+            <tr>
+                <td width="100">id</td>
+                <td width="600">426</td>
+                <td width="100" colspan="2" rowspan="3"><img src="../libs/images/c1.jpg" width="100" height="100" alt=""></td>
+            </tr>
+            <tr>
+                <td>账号</td>
+                <td>hello123</td>
+            </tr>
+            <tr>
+                <td>手机</td>
+                <td>1234567890</td>
+            </tr>
+            <tr>
+                <td>解决状态</td>
+                <td colspan="3">已解决</td>
+            </tr>
+            <tr>
+                <td>服务类型</td>
+                <td colspan="3"><span>劳动保障、退休服务</span> —— <span class="text-primary">《失业证》办理</span></td>
+            </tr>
+            <tr>
+                <td>内容</td>
+                <td colspan="3">
+                    <span>大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业大学生就业</span>
+                    <div class="contentImg">
+                        <img class="smallImg" src="../libs/images/1.jpg">
+                        <img class="smallImg" src="../libs/images/4.jpg">
+                        <img class="smallImg" src="../libs/images/3.jpg">
+                        <img class="smallImg" src="../libs/images/c3.jpg">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>回复</td>
+                <td colspan="3"><textarea class="form-control" disabled rows="5"></textarea></td>
+            </tr>
+        </table>
+        <div class="form-group">
+            <button class="btn btn-success" onclick="report()">上报区级</button>
+            <button class="btn btn-danger">不可解决</button>
+            <button class="btn btn-primary">立即回复</button>
+        </div>
+    </form>
+</div>
+
+<div class="fwlxList">
+    <form>
+        <h3>服务类型列表</h3>
+        <div class="selectArea">
+            <select class="form-control">
+                <option class="" value="">-请选择服务类型 -</option>
+                <option value="">民意采集</option>
+                <option value="">便民生活</option>
+                <option value="">群众诉求</option>
+                <option value="">公共安全</option>
+                <option value="">矛盾调解</option>
+                <option value="">突发事件</option>
+                <option value="">政策解读</option>
+                <option value="">低保救助</option>
+                <option value="">计生服务</option>
+                <option value="">就业服务</option>
+
+            </select>
+        </div>
+        <div class="btnGroup">
+            <button class="btn btn-default">关闭</button>
+            <button class="btn btn-primary">提交</button>
+        </div>
+    </form>
+</div>
+
+<div class="lightBox">
+    <div class="mask"></div>
+    <img class="bigImg" src=""></img>
+    <div class="arrow prev"><i class="fa fa-arrow-left fa-4x"></i></div>
+    <div class="arrow next"><i class="fa fa-arrow-right fa-4x"></i></div>
+</div>
+<script>
+function report(){
+    $(".fwlxList").show();
+    $(".filterWrap").show();
+}
+$(function() {
+    $(".filterWrap").click(function() {
+        $(".fwlxList").hide();
+        $(this).hide();
+    });   
+    $(".fwlxList .btn").click(function() {
+        $(".fwlxList").hide();
+        $(".filterWrap").hide();
+    });
+
+    /*(function(){
+        var winWidth = $(window).width(),
+            winHeight = $(window).height(),
+            imgs = $(".contentImg img"),
+            bigImg = $(".lightBox .bigImg"),
+            size = imgs.size(),
+            curIndex;
+
+        $(".lightBox").hide();
+
+        function CheckImgExists(imgurl) {  
+            var ImgObj = new Image(); //判断图片是否存在  
+            ImgObj.src = imgurl;  
+            //没有图片，则返回-1  
+            if (ImgObj.fileSize > 0 || (ImgObj.width > 0 && ImgObj.height > 0)) {  
+                return true;  
+            } else {  
+                return false;
+            }  
+        } 
+
+        function showImg(index){
+            var imgSrc = imgs.eq(index).attr("src");
+            var newImage = new Image();
+
+            newImage.src = imgSrc;
+            bigImg.attr("src",imgSrc);
+
+            var isHorizontal = newImage.naturalWidth/newImage.naturalHeight < winWidth/winHeight ? true : false;
+            bigImg.css({
+                opacity:"0"
+            });
+            bigImg.stop().animate({
+                    opacity:"1"
+                },500);
+            if(isHorizontal){
+                bigImg.css({
+                    width:"auto",
+                    height:"85%"
+                });
+            }else{
+                bigImg.css({
+                    width:"85%",
+                    height:"auto"
+                });
+            }
+        }
+
+        imgs.each(function(index){
+            $(this).click(function(){
+                $(".lightBox").fadeIn();
+                curIndex = index;
+                showImg(curIndex);
+            });
+        });
+
+        $(".lightBox .mask").click(function(){
+            $(".lightBox").fadeOut();
+        });
+
+        $(".lightBox .prev").click(function(){
+            curIndex = --curIndex % size;
+            showImg(curIndex);
+        });  
+        $(".lightBox .next").click(function(){
+            curIndex = ++curIndex % size;
+            showImg(curIndex);
+        });  
+    })();*/
+}); 
+
+
+</script>

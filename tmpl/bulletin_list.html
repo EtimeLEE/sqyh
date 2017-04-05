@@ -1,0 +1,179 @@
+<div class="cTitle">
+    <h1>社区公告</h1>
+    <p>当前位置：<span class="text-danger">公告列表</span></p>
+</div>
+<div class="cWrapper sqgl">
+    <div class="searchArea">
+        <form class="form-horizontal" method="POST">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="请输入关键字">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button">搜索</button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <a href="#/bulletin_detail/add" class="btn btn-primary">新建公告</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="sq-list img-table">
+        <table class="table table-hover table-bordered table-striped" id="imgTable">
+            <tr>
+                <th width="100">ID</th>
+                <th width="120">图片</th>
+                <th>标题</th>
+                <th width="200">时间</th>
+                <th width="100">公告类型</th>
+                <th width="100">操作</th>
+            </tr>
+            <tr>
+                <td class="textc">87654321</td>
+                <td class="imgTd">
+                    <div class="img" ng-if="url" style="background-image: url({{url}});"></div>
+                </td>
+                <td><a href="#/bulletin_detail/87654321">公告标题公告标题公告标题</a></td>
+                <td class="textc">2016-05-24 12:36:55</td>
+                <td class="textc">通知</td>
+                <td class="textc">
+                    <a href="#/bulletin_detail/87654321" title="编辑"><i class="fa fa-edit fa-lg"></i></a>
+                    <a href="javascript:;" title="删除公告"><i class="fa fa-trash fa-lg"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="textc">87654321</td>
+                <td class="imgTd">
+                    <div class="img" ng-if="url" style="background-image: url(../libs/images/4.jpg);"></div>
+                </td>
+                <td><a href="#/bulletin_detail/87654321">公告标题公告标题公告标题</a></td>
+                <td class="textc">2016-05-24 12:36:55</td>
+                <td class="textc">通知</td>
+                <td class="textc">
+                    <a href="#/bulletin_detail/87654321" title="编辑"><i class="fa fa-edit fa-lg"></i></a>
+                    <a href="javascript:;" title="删除公告"><i class="fa fa-trash fa-lg"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="textc">87654321</td>
+                <td></td>
+                <td><a href="#/bulletin_detail/87654321">公告标题公告标题公告标题</a></td>
+                <td class="textc">2016-05-24 12:36:55</td>
+                <td class="textc">通知</td>
+                <td class="textc">
+                    <a href="#/bulletin_detail/87654321" title="编辑"><i class="fa fa-edit fa-lg"></i></a>
+                    <a href="javascript:;" title="删除公告"><i class="fa fa-trash fa-lg"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="textc">87654321</td>
+                <td class="imgTd">
+                    <div class="img" ng-if="url" style="background-image: url(../libs/images/3.jpg);"></div>
+                </td>
+                <td><a href="#/bulletin_detail/87654321">公告标题公告标题公告标题</a></td>
+                <td class="textc">2016-05-24 12:36:55</td>
+                <td class="textc">通知</td>
+                <td class="textc">
+                    <a href="#/bulletin_detail/87654321" title="编辑"><i class="fa fa-edit fa-lg"></i></a>
+                    <a href="javascript:;" title="删除公告"><i class="fa fa-trash fa-lg"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="textc">87654321</td>
+                <td></td>
+                <td><a href="#/bulletin_detail/87654321">公告标题公告标题公告标题</a></td>
+                <td class="textc">2016-05-24 12:36:55</td>
+                <td class="textc">通知</td>
+                <td class="textc">
+                    <a href="#/bulletin_detail/87654321" title="编辑"><i class="fa fa-edit fa-lg"></i></a>
+                    <a href="javascript:;" title="删除公告"><i class="fa fa-trash fa-lg"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="textc">87654321</td>
+                <td></td>
+                <td><a href="#/bulletin_detail/87654321">公告标题公告标题公告标题</a></td>
+                <td class="textc">2016-05-24 12:36:55</td>
+                <td class="textc">通知</td>
+                <td class="textc">
+                    <a href="#/bulletin_detail/87654321" title="编辑"><i class="fa fa-edit fa-lg"></i></a>
+                    <a href="javascript:;" title="删除公告"><i class="fa fa-trash fa-lg"></i></a>
+                </td>
+            </tr>
+        </table>
+
+        <tm-pagination conf="paginationConf"></tm-pagination>
+        
+    </div>
+</div>
+<script>
+/*
+function addLoadEvent(func){
+    var oldonload = window.onload;
+    if(typeof window.onload != 'function'){
+        window.onload = func;
+    }else{
+        window.onload = function(){
+            oldonload();
+            func();
+        };
+    }
+}
+function getEl(id){
+    return document.getElementById(id);
+}
+function getByClass(clsName, parent) {
+    var clsArr = [],
+        oElements = parent.getElementsByTagName('*');
+    for (var i = 0; i < oElements.length; i++) {
+        if (oElements[i].className == clsName) {
+            clsArr.push(oElements[i]);
+        }
+    }
+    return clsArr;
+}
+function loadImg(){
+    var imgTable = getEl("imgTable");
+    var imgItem = getByClass("image",imgTable);
+    var boxW = 120;
+    var boxH = 67.5;
+    var scale = 16/9;
+    var imgW, imgH, imgScale, mTop, mLeft;
+    imgItem.forEach(function(item,index,array){
+        console.log(item.src+"=====");
+        
+        imgW = item.naturalWidth;
+        imgH = item.naturalHeight;
+        imgScale = imgW/imgH;
+        var isVertical = (imgW/imgH > scale) ? false : true;
+        if(isVertical){
+            imgW = boxW;
+            imgH = imgW / imgScale;
+            mTop = (imgH - boxH) / 2;
+            mLeft = 0;
+        }else{
+            imgH = boxH;
+            imgW = imgH * imgScale;
+            mTop = 0;
+            mLeft = (imgW - boxW) / 2;
+        }
+        item.style.width = imgW + "px";
+        item.style.height = imgH + "px";
+        item.style.marginTop = -mTop + "px";
+        item.style.marginLeft = -mLeft + "px";
+        console.log(imgW+","+imgH+","+imgScale);
+    });
+
+}
+
+addLoadEvent(loadImg());
+addLoadEvent(
+    setTimeout(function(){
+        loadImg();
+    }, 100)
+);
+
+*/
+</script>

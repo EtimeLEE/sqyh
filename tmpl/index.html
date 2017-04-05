@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="mainApp">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>社区管理</title>
+<link href="../libs/css/bootstrap.min.css" rel="stylesheet">
+<link href="../libs/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="../libs/css/font-awesome.min.css" rel="stylesheet">
+<link href="../libs/css/style.css" rel="stylesheet">
+<link href="../libs/css/animate.min.css" rel="stylesheet">
+<link href="../libs/css/angular-inform.min.css" rel="stylesheet">
+</head>
+<body>
+<div inform class="inform-fixed inform-shadow inform-animate inform-center"></div>
+<div class="mainContainer">
+    <div class="header clearfix">
+        <div class="headerL floatl"><span ng-if="1">社区</span><span ng-if="0">区级</span>管理</div>
+        <div class="headerR floatr">
+            <div class="miniNav"><span>张书记</span><i class="fa fa-lock fa-lg"></i></div>
+            <div class="basic-details clearfix">
+                <div class="pic floatl"><img src="../libs/images/logo.png" width="70" height="70" alt=""></div>
+                <div class="info floatr">
+                    <p>1234567890@qq.com</p>
+                    <div class="btn_group">
+                        <!-- 社区密码修改 弹出对话框，选择修改密码的类型 -->
+                        <a href="javascript:;" onclick="pswModifyBox()" ng-if="0" class="btn btn-danger btn-sm">修改密码</a>
+                        <!-- 区级密码修改 直接跳到修改密码页 -->
+                        <a href="#/modify_password/gov" ng-if="1" class="btn btn-danger btn-sm">修改密码</a>
+                        <a href="#" class="btn btn-danger btn-sm">退出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mainBody">
+        <div class="sideBar floatl">
+            <div class="logo"><img src="../libs/images/logo.png" width="100" height="100" alt=""></div>
+            <!-- 区级 -->
+            <ul class="sideNav" ng-if="1">
+                <li ng-class="{active:path=='/community_list'||path=='/community_detail/edit'}"><a href="#/community_list">
+                    <div class="icon"><i class="fa fa-list fa-lg"></i></div>
+                    <div class="txt">社区管理</div>
+                    <div class="sanjiao"></div>
+                </a></li>
+                <li ng-class="{active:path=='/community_apply'||path=='/community_detail/review'}"><a href="#/community_apply">
+                    <div class="icon"><i class="fa fa-folder fa-lg"></i></div>
+                    <div class="txt">申请社区</div>
+                    <div class="sanjiao"></div>
+                </a></li>
+                <li ng-class="{active:path=='/data_statistics'||path=='/data_list'||path=='/data_detail'}"><a href="#/data_statistics">
+                    <div class="icon"><i class="fa fa-pie-chart fa-lg"></i></div>
+                    <div class="txt">数据统计</div>
+                    <div class="sanjiao"></div>
+                </a></li>
+                <li ng-class="{active:path=='/notice'||path=='/notice_add'}"><a href="#/notice">
+                    <div class="icon"><i class="fa fa-bullhorn fa-lg"></i></div>
+                    <div class="txt">区级公告</div>
+                    <div class="sanjiao"></div>
+                </a></li>
+            </ul>
+
+            <!-- 社区 -->
+            <ul class="sideNav" ng-if="0">
+                <li ng-class="{active:path=='/bulletin_list'||path=='/bulletin_detail'}"><a href="#/bulletin_list">
+                    <div class="icon"><i class="fa fa-bullhorn fa-lg"></i></div>
+                    <div class="txt">社区公告</div>
+                    <div class="sanjiao"></div>
+                </a></li>
+                <li ng-class="{active:path=='/feedback'||path=='/feedback_detail'}"><a href="#/feedback">
+                    <div class="icon"><i class="fa fa-heart fa-lg"></i></div>
+                    <div class="txt">民生在线</div>
+                    <div class="sanjiao"></div>
+                </a></li>
+                <li ng-class="{active:path=='/wiki'||path=='/wiki_detail'}"><a href="#/wiki">
+                    <div class="icon"><i class="fa fa-book fa-lg"></i></div>
+                    <div class="txt">社区百科</div>
+                    <div class="sanjiao"></div>
+                </a></li>
+                <li ng-class="{active:path=='/permission_list'||path=='/permission_detail'}"><a href="#/permission_list">
+                    <div class="icon"><i class="fa fa-lock fa-lg"></i></div>
+                    <div class="txt">权限管理</div>
+                    <div class="sanjiao"></div>
+                </a></li>
+                <li ng-class="{active:path=='/personal'||path=='/picManage'}"><a href="#/personal">
+                    <div class="icon"><i class="fa fa-user fa-lg"></i></div>
+                    <div class="txt">个人中心</div>
+                    <div class="sanjiao"></div>
+                </a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div ng-view></div>
+        </div>
+    </div>
+</div>
+
+<div class="filterWrap"></div>
+<div class="pswModifyBox">
+    <h3>社区密码修改</h3>
+    <div class="btnGroup">
+        <button class="btn btn-default">关闭</button>
+        <a href="#/modify_password/com_login" class="btn btn-primary">修改登录密码</a>
+        <a href="#/modify_password/com_second" class="btn btn-primary">修改二级密码</a>
+    </div>
+</div>
+
+
+<script src="../libs/js/jquery.min.js"></script>
+<script src="../libs/js/angular.min.js"></script>
+<script src="../libs/js/angular-route.min.js"></script>
+<script src="../libs/js/angular-inform.min.js"></script>
+
+<script src="../libs/js/index/controllers.js"></script>
+<script src="../libs/js/index/directives.js"></script>
+<script src="../libs/js/index/services.js"></script>
+<script src="../libs/js/index/filter.js"></script>
+<script src="../libs/js/index/app.js"></script>
+
+<script src="../libs/js/echarts.common.min.js"></script>
+
+<script src="../libs/js/bootstrap.min.js"></script>
+<script src="../libs/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../libs/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../libs/ckeditor/ckeditor.js"></script>
+<script src="../libs/js/angular-baidu-map.min.js"></script>
+
+<script>
+function pswModifyBox(){
+    $(".pswModifyBox").show();
+    $(".filterWrap").show();
+}
+$(function() {
+    var winH = $(window).height();
+    var minH = winH - 58;
+    $(".content").css({
+        minHeight: minH + "px"
+    });
+
+    $(".miniNav").mouseenter(function(){
+        $(".basic-details").show();
+    });
+    $(".basic-details").mouseleave(function() {
+        $(this).hide();
+    });
+
+    $(".filterWrap").click(function() {
+        $(".pswModifyBox").hide();
+        $(this).hide();
+    }); 
+    $(".pswModifyBox .btn").click(function() {
+        $(".pswModifyBox").hide();
+        $(".filterWrap").hide();
+    });  
+});
+
+
+</script>
+</body>
+
+</html>

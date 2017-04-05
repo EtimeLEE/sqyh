@@ -1,0 +1,42 @@
+<div class="cTitle">
+    <h1>个人中心</h1>
+    <p>当前位置：<span class="text-danger">图片管理</span></p>
+</div>
+<div class="cWrapper sqgl-detail">
+    <ul class="picList clearfix">
+        <li>
+            <img src="../libs/images/c0.jpg" width="320" height="240" alt="">
+            <div class="icon">
+                <i class="fa fa-remove fa-lg" ng-click="deletePic(1)" ng-if="1"></i>
+                <i class="fa fa-plus fa-lg" ng-click="addPic('i1')" ng-if="0"></i>
+            </div>
+        </li>
+        <li>
+            <img src="../libs/images/c1.jpg" width="320" height="240" alt="">
+            <div class="icon">
+                <i class="fa fa-remove fa-lg" ng-click="deletePic(2)" ng-if="1"></i>
+                <i class="fa fa-plus fa-lg" ng-click="addPic('i2')" ng-if="0"></i>
+            </div>
+        </li>
+        <li>
+            <img src="../libs/images/c2.jpg" width="320" height="240" alt="">
+            <div class="icon">
+                <i class="fa fa-remove fa-lg" ng-click="deletePic(3)" ng-if="1"></i>
+                <i class="fa fa-plus fa-lg" ng-click="addPic('i3')" ng-if="0"></i>
+            </div>
+        </li>
+        <li>
+            <img src="" width="320" height="240" alt="">
+            <div class="icon">
+                <i class="fa fa-remove fa-lg" ng-click="deletePic(4)" ng-if="0"></i>
+                <i class="fa fa-plus fa-lg" ng-click="addPic('i4')" ng-if="1"></i>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!-- 上传图片 -->
+<input type="file" file-model="myFile1" accept="image/*" id="i1" style="display: none; "/>
+<input type="file" file-model="myFile2" accept="image/*" id="i2" style="display: none; "/>
+<input type="file" file-model="myFile3" accept="image/*" id="i3" style="display: none; "/>
+<input type="file" file-model="myFile4" accept="image/*" id="i4" style="display: none; "/>

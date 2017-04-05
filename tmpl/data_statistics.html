@@ -1,0 +1,39 @@
+<div class="cTitle">
+    <h1>数据统计</h1>
+    <p>当前位置：<span class="text-danger">数据统计</span></p>
+</div>
+
+<div class="cWrapper data">
+    <div class="date-pick">
+        <form>
+            <!-- <div begindate></div> -->
+            <div class="input-group date begin_date" data-date="" data-date-format="yyyy-mm-dd" data-link-format="yyyy-mm-dd">
+                <label class="input-group-addon">起始日期</label>
+                <input class="form-control bDate" ng-model="startDate" size="16" type="text" value="" readonly>
+                <span class="input-group-addon"><i class="fa fa-calendar fa-lg"></i></span>
+            </div>
+            
+            <div enddate></div>
+            <button class="btn btn-primary" ng-click="show()">搜索</button>
+        </form>
+    </div>
+    <div class="clearfix Echarts">
+        <div class="pieChart floatl" pie1 id="pie1" data="data1"></div>
+        <div class="pieChart floatr" pie2 id="pie2" data="data2"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$('.begin_date').datetimepicker({
+    language: 'zh-CN',
+    weekStart: 1,
+    todayBtn: 1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,
+    forceParse: 0,
+    // startDate: scope.beginDate,
+    // endDate: new Date()
+});
+</script>
